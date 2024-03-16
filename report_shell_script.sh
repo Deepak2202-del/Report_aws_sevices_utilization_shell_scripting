@@ -1,3 +1,5 @@
+#!bin/bash
+
 #author:Deepak
 #date:15-03-2024
 #Ec2,s3,DynamoDB,RDS,EFS,Lambda
