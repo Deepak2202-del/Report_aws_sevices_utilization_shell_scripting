@@ -1,0 +1,42 @@
+#author:Deepak
+#date:15-03-2024
+#Ec2,s3,DynamoDB,RDS,EFS,Lambda
+
+# before that need to add the aws configure by give the commmand called  -- aws configure 
+# need to gove the accses and secrte key ID's it will connect to ur aws cli 
+
+# Set the AWS region
+export AWS_DEFAULT_REGION="us-east-1"  # Change this to your desired region
+
+set -vx
+#set -ve  used for debug mood
+
+#aws Ec2
+aws ec2 describe-instances
+
+echo "aws ec2 describe-instance"
+#aws S3
+aws s3 ls
+echo "aws s3 list"
+
+#aws DynamoBD
+aws dynamodb  list-tables
+echo "aws DynamoDB Tables"
+#aws RDS
+aws rds  describe-db-instances
+echo "aws RDS"
+#aws EFS
+aws efs   describe-mount-targets
+echo "aws EFS"
+
+#aws Lambda
+aws lambda  list-functions
+echo "aws lambda"
+
+#chmod +x <file _name>
+
+crontab -e
+
+
+0 3 * * * /home/ubuntu/Daliy_Report_Aws_resoure_utilization.sh >> /home/ubuntu/deepak.log 2>&1
+
